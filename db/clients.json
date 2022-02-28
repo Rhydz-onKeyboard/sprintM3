@@ -1,0 +1,38 @@
+[
+    {
+        "id": "c9e53bfe",
+        "name": "Derrick",
+        "last": "Ramirez",
+        "passw": "maria1",
+        "age": 72
+    },
+    {
+        "id": "26edc408",
+        "name": "Agustin",
+        "last": "Ortiz",
+        "passw": "kong",
+        "age": 64
+    },
+    {
+        "id": "20e022fb",
+        "name": "Rebecca",
+        "last": "Reynolds",
+        "passw": "pimpdadd",
+        "age": 25
+    },
+    {
+        "id": "aabbeb2d",
+        "name": "Arlo",
+        "last": "Turner",
+        "passw": "kittie",
+        "age": 53
+    },
+    {
+        "id": "4da5f698",
+        "name": "Huesito",
+        "last": "Lechuga",
+        "age": "1",
+        "passw": "4323",
+        "cart": []
+    }
+]
