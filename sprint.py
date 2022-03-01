@@ -1,16 +1,18 @@
-
-from operator import index
+# importar archivos o modulos necesarios
 from models.client import Client
 from models.clients import Clients
 from services import users
 from helpers import inquirer, uuid_generator
 
+
 def opt_value(value, name = 'opcion'):
+    #Recibe un valor de un diccionario y lo transforma a minuscula. Para ocupar con inquirer
     opcion = value[name].lower()
     return opcion
 
 
 def run():
+    #funcion principal
     clients_db = users.get()
     clients = Clients()
     if clients_db:
@@ -20,7 +22,7 @@ def run():
         opt = opt_value(inquirer.inquirer_menu())
         if opt == 'bodega':
             print(f'Elegiste el menu {opt}')
-            
+        
         elif opt == 'clientes':
             opt_clients = opt_value(inquirer.customer_menu())
             if opt_clients == 'agregar cliente':
@@ -33,11 +35,13 @@ def run():
                 name_delete = inquirer.list_client_to_delete(clients.get_clients())['clientes']
                 item = [client for client in clients.get_clients() if (f"{client['name']} {client['last']}") == name_delete][0]
                 index = clients.get_clients().index(item)
-                inquirer.confirm()
+                inquirer.confirm_remove_client()
                 clients.remove_client(index)
                 users.post(clients.get_clients())
             elif opt_clients == 'mostrar clientes':
-                print(clients.get_clients())
+                for client in clients.get_clients():
+                    print(client)
+
         elif opt == 'envio':
             print(f'Elegiste el menu {opt}')
         else:
