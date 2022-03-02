@@ -4,7 +4,7 @@ from utils import request_http
 import os
 
 api_users = 'https://randomuser.me/api/?results=4&inc=name,dob,login'
-db = '.\sprint\db\clients.json'
+db = '.\db\clients.json'
 
 def get():
     if os.path.exists(db):
